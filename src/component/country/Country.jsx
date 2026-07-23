@@ -17,6 +17,8 @@ const Country = ({country}) => {
 
         //  2. 
         // setVisited (visited ? false : true);
+
+        // 3.
         setVisited (!visited);
 
         console.log(country.name.common);
@@ -24,7 +26,9 @@ const Country = ({country}) => {
     }
     
     return (
-        <div className = {visited ? "country-visited" : "country"}>
+        // 1.className = {visited ? "country-visited" : "country"}
+        //2. className= {`country text-lg border-3xl ${visited ? 'country-visited' : 'country-not-visited'}`}
+        <div className= {`country ${visited && 'country-visited'}`}>
               <img src = {country.flags.flags.png} alt={country.flags.flags.alt} />
               <h3>Name : {country.name.common}</h3>
               <h3>Population : {country.population.population}</h3>
